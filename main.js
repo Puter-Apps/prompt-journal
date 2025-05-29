@@ -112,6 +112,7 @@ function showAddPromptModal() {
     improvedContent = null;
 }
 
+// Modal management
 function hidePromptModal() {
     document.getElementById('promptModal').style.display = 'none';
     improvedContent = null;
