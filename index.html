@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PromptCraft Pro</title>
+    <script src="https://js.puter.com/v2/"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="app-logo">PromptCraft Pro</div>
+            <nav>
+                <div class="nav-item active" data-category="all">All Prompts</div>
+                <div class="nav-item" data-category="coding">Coding</div>
+                <div class="nav-item" data-category="writing">Writing</div>
+                <div class="nav-item" data-category="analysis">Analysis</div>
+                <div class="nav-item" data-category="creative">Creative</div>
+                <div class="nav-item" data-category="business">Business</div>
+                <div class="nav-item" data-category="academic">Academic</div>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="toolbar">
+                <input type="text" class="search-box" placeholder="Search prompts...">
+                <button class="btn btn-primary" onclick="showAddPromptModal()">New Prompt</button>
+            </div>
+            <div class="prompts-grid" id="promptsGrid"></div>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="promptModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle">Create New Prompt</div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Title</label>
+                <input type="text" class="form-control" id="promptTitle" placeholder="Enter prompt title">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" id="promptDescription" rows="2" placeholder="Enter brief description"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Prompt Content</label>
+                <textarea class="form-control" id="promptContent" rows="5" placeholder="Enter your prompt"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Category</label>
+                <select class="form-control" id="promptCategory">
+                    <option value="coding">Coding</option>
+                    <option value="writing">Writing</option>
+                    <option value="analysis">Analysis</option>
+                    <option value="creative">Creative</option>
+                    <option value="business">Business</option>
+                    <option value="academic">Academic</option>
+                </select>
+            </div>
+
+            <div class="ai-improvement" id="aiImprovement">
+                <div class="ai-improvement-title">AI Improved Version</div>
+                <div id="aiImprovedContent"></div>
+                <button class="btn btn-primary" onclick="applyImprovement()" style="margin-top: 1rem">Apply Improvement</button>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="hidePromptModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="improveWithAI()">Improve with AI</button>
+                <button class="btn btn-primary" onclick="savePrompt()">Save Prompt</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Loading -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
