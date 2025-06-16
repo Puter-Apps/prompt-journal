@@ -28,7 +28,7 @@
                     <i class="fas fa-search" style="color: var(--text-secondary); position: absolute; left: 12px; top: 50%; transform: translateY(-50%);"></i>
                     <input type="text" class="search-box" placeholder="Search prompts..." style="padding-left: 35px;">
                 </div>
-                <button class="btn btn-primary" onclick="showAddPromptModal()">New Prompt</button>
+                <button class="btn btn-primary" onclick="showAddPromptModal()"><i class="fas fa-plus" style="color: white;"></i> <span class="btn-text">New Prompt</span></button>
             </div>
             <div class="prompts-grid" id="promptsGrid"></div>
         </main>
@@ -71,13 +71,13 @@
             <div class="ai-improvement" id="aiImprovement">
                 <div class="ai-improvement-title">AI Improved Version</div>
                 <div id="aiImprovedContent"></div>
-                <button class="btn btn-primary" onclick="applyImprovement()" style="margin-top: 1rem">Apply Improvement</button>
+                <button class="btn btn-primary" onclick="applyImprovement()" style="margin-top: 1rem"><i class="fas fa-check" style="color: white;"></i> <span class="btn-text">Apply Improvement</span></button>
             </div>
 
             <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="hidePromptModal()">Cancel</button>
-                <button class="btn btn-primary" onclick="improveWithAI()">Improve with AI</button>
-                <button class="btn btn-primary" onclick="savePrompt()">Save Prompt</button>
+                <button class="btn btn-secondary" onclick="hidePromptModal()"><i class="fas fa-times" style="color: var(--text-primary);"></i> <span class="btn-text">Cancel</span></button>
+                <button class="btn btn-primary" onclick="improveWithAI()"><i class="fas fa-magic" style="color: white;"></i> <span class="btn-text">Improve with AI</span></button>
+                <button class="btn btn-primary" onclick="savePrompt()"><i class="fas fa-save" style="color: white;"></i> <span class="btn-text">Save Prompt</span></button>
             </div>
         </div>
     </div>

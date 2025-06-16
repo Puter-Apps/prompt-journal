@@ -47,11 +47,11 @@ function renderPrompts() {
         <div class="prompt-card">
             <div class="prompt-title">${prompt.title}</div>
             <div class="prompt-description">${prompt.description || ''}</div>
-            <div class="prompt-content">${prompt.content}</div>
+            <div class="prompt-content">${prompt.content.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>
             <div class="card-actions">
-                <button class="btn btn-secondary" onclick="copyPrompt('${prompt.id}')"><i class="fas fa-copy" style="color: var(--text-primary);"></i> Copy</button>
-                <button class="btn btn-secondary" onclick="editPrompt('${prompt.id}')"><i class="fas fa-edit" style="color: var(--text-primary);"></i> Edit</button>
-                <button class="btn btn-danger" onclick="deletePrompt('${prompt.id}')"><i class="fas fa-trash-alt" style="color: white;"></i> Delete</button>
+                <button class="btn btn-secondary" onclick="copyPrompt('${prompt.id}')"><i class="fas fa-copy" style="color: var(--text-primary);"></i> <span class="btn-text">Copy</span></button>
+                <button class="btn btn-secondary" onclick="editPrompt('${prompt.id}')"><i class="fas fa-edit" style="color: var(--text-primary);"></i> <span class="btn-text">Edit</span></button>
+                <button class="btn btn-danger" onclick="deletePrompt('${prompt.id}')"><i class="fas fa-trash-alt" style="color: white;"></i> <span class="btn-text">Delete</span></button>
             </div>
         </div>
     `).join('') : '<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary);"><i class="fas fa-search" style="color: var(--text-secondary); margin-right: 8px;"></i>No prompts found</p>';

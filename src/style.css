@@ -132,14 +132,20 @@ body {
 .btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.625rem;
-    padding: 0.75rem 1.25rem;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
     border-radius: 8px;
     border: none;
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
+    min-width: fit-content;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .btn-primary {
@@ -179,6 +185,9 @@ body {
     border-radius: 12px;
     padding: 1.5rem;
     transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .prompt-card:hover {
@@ -213,11 +222,15 @@ body {
     max-height: 150px;
     overflow-y: auto;
     line-height: 1.6;
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 .card-actions {
     display: flex;
     gap: 0.625rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 /* Modal */
@@ -310,6 +323,7 @@ body {
     justify-content: flex-end;
     gap: 0.75rem;
     margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 /* Toast */
@@ -404,5 +418,42 @@ body {
         width: 95%;
         margin: 1rem;
         padding: 1.5rem;
+    }
+    
+    .prompts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-actions {
+        justify-content: space-between;
+    }
+    
+    .btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8125rem;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .card-actions {
+        justify-content: space-around;
+        width: 100%;
+    }
+    
+    .btn {
+        padding: 0.5rem;
+        min-width: 40px;
+        flex: 1;
+        max-width: 32%;
+    }
+    
+    .btn-text {
+        display: none;
+    }
+    
+    .btn i {
+        margin: 0;
+        font-size: 1rem;
     }
 }
