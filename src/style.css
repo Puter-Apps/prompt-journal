@@ -62,6 +62,7 @@ body {
     font-weight: 700;
     background: linear-gradient(135deg, var(--accent-main), var(--accent-hover));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 2rem;
     padding: 0 0.5rem;
@@ -105,8 +106,13 @@ body {
     margin-bottom: 2rem;
 }
 
-.search-box {
+.search-container {
+    position: relative;
     width: 320px;
+}
+
+.search-box {
+    width: 100%;
     padding: 0.75rem 1rem;
     background: var(--bg-surface);
     border: 1px solid var(--border-light);
@@ -318,6 +324,9 @@ body {
     animation: slideIn 0.3s ease;
     z-index: 1100;
     box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 /* Loading */
@@ -386,6 +395,7 @@ body {
         gap: 1rem;
     }
 
+    .search-container,
     .search-box {
         width: 100%;
     }

@@ -12,19 +12,22 @@
         <aside class="sidebar">
             <div class="app-logo">PromptCraft Pro</div>
             <nav>
-                <div class="nav-item active" data-category="all">All Prompts</div>
-                <div class="nav-item" data-category="coding">Coding</div>
-                <div class="nav-item" data-category="writing">Writing</div>
-                <div class="nav-item" data-category="analysis">Analysis</div>
-                <div class="nav-item" data-category="creative">Creative</div>
-                <div class="nav-item" data-category="business">Business</div>
-                <div class="nav-item" data-category="academic">Academic</div>
+                <div class="nav-item active" data-category="all"><i class="fas fa-list" style="color: var(--accent-main); margin-right: 10px;"></i> All Prompts</div>
+                <div class="nav-item" data-category="coding"><i class="fas fa-code" style="color: var(--accent-main); margin-right: 10px;"></i> Coding</div>
+                <div class="nav-item" data-category="writing"><i class="fas fa-pen-nib" style="color: var(--accent-main); margin-right: 10px;"></i> Writing</div>
+                <div class="nav-item" data-category="analysis"><i class="fas fa-chart-bar" style="color: var(--accent-main); margin-right: 10px;"></i> Analysis</div>
+                <div class="nav-item" data-category="creative"><i class="fas fa-paint-brush" style="color: var(--accent-main); margin-right: 10px;"></i> Creative</div>
+                <div class="nav-item" data-category="business"><i class="fas fa-briefcase" style="color: var(--accent-main); margin-right: 10px;"></i> Business</div>
+                <div class="nav-item" data-category="academic"><i class="fas fa-graduation-cap" style="color: var(--accent-main); margin-right: 10px;"></i> Academic</div>
             </nav>
         </aside>
 
         <main class="main">
             <div class="toolbar">
-                <input type="text" class="search-box" placeholder="Search prompts...">
+                <div class="search-container">
+                    <i class="fas fa-search" style="color: var(--text-secondary); position: absolute; left: 12px; top: 50%; transform: translateY(-50%);"></i>
+                    <input type="text" class="search-box" placeholder="Search prompts..." style="padding-left: 35px;">
+                </div>
                 <button class="btn btn-primary" onclick="showAddPromptModal()">New Prompt</button>
             </div>
             <div class="prompts-grid" id="promptsGrid"></div>
@@ -39,22 +42,22 @@
             </div>
             
             <div class="form-group">
-                <label class="form-label">Title</label>
+                <label class="form-label"><i class="fas fa-heading" style="color: var(--accent-main); margin-right: 5px;"></i> Title</label>
                 <input type="text" class="form-control" id="promptTitle" placeholder="Enter prompt title">
             </div>
 
             <div class="form-group">
-                <label class="form-label">Description</label>
+                <label class="form-label"><i class="fas fa-align-left" style="color: var(--accent-main); margin-right: 5px;"></i> Description</label>
                 <textarea class="form-control" id="promptDescription" rows="2" placeholder="Enter brief description"></textarea>
             </div>
 
             <div class="form-group">
-                <label class="form-label">Prompt Content</label>
+                <label class="form-label"><i class="fas fa-file-alt" style="color: var(--accent-main); margin-right: 5px;"></i> Prompt Content</label>
                 <textarea class="form-control" id="promptContent" rows="5" placeholder="Enter your prompt"></textarea>
             </div>
 
             <div class="form-group">
-                <label class="form-label">Category</label>
+                <label class="form-label"><i class="fas fa-tag" style="color: var(--accent-main); margin-right: 5px;"></i> Category</label>
                 <select class="form-control" id="promptCategory">
                     <option value="coding">Coding</option>
                     <option value="writing">Writing</option>

@@ -216,9 +216,10 @@ function hideLoading() {
 
 function showToast(message, type = 'success') {
     const toast = document.getElementById('toast');
-    toast.textContent = message;
+    const icon = type === 'success' ? '<i class="fas fa-check-circle" style="color: white;"></i>' : '<i class="fas fa-exclamation-circle" style="color: white;"></i>';
+    toast.innerHTML = icon + message;
     toast.style.background = type === 'success' ? 'var(--success)' : 'var(--danger)';
-    toast.style.display = 'block';
+    toast.style.display = 'flex';
     setTimeout(() => {
         toast.style.display = 'none';
     }, 3000);
