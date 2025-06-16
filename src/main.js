@@ -49,12 +49,12 @@ function renderPrompts() {
             <div class="prompt-description">${prompt.description || ''}</div>
             <div class="prompt-content">${prompt.content}</div>
             <div class="card-actions">
-                <button class="btn btn-secondary" onclick="copyPrompt('${prompt.id}')">Copy</button>
-                <button class="btn btn-secondary" onclick="editPrompt('${prompt.id}')">Edit</button>
-                <button class="btn btn-danger" onclick="deletePrompt('${prompt.id}')">Delete</button>
+                <button class="btn btn-secondary" onclick="copyPrompt('${prompt.id}')"><i class="fas fa-copy" style="color: var(--text-primary);"></i> Copy</button>
+                <button class="btn btn-secondary" onclick="editPrompt('${prompt.id}')"><i class="fas fa-edit" style="color: var(--text-primary);"></i> Edit</button>
+                <button class="btn btn-danger" onclick="deletePrompt('${prompt.id}')"><i class="fas fa-trash-alt" style="color: white;"></i> Delete</button>
             </div>
         </div>
-    `).join('') : '<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary);">No prompts found</p>';
+    `).join('') : '<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary);"><i class="fas fa-search" style="color: var(--text-secondary); margin-right: 8px;"></i>No prompts found</p>';
 }
 
 // AI Improvement
